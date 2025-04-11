@@ -1,0 +1,302 @@
+:root{
+  --titulo: 30px;
+  --animation-color: rgb(92, 179, 164);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Haffer, sans-serif;
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  color: #575757;
+}
+
+body {
+  
+  width: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+
+
+  color: black;
+  background-color: rgb(174, 185, 176);
+
+  transition: all 0.3s ease-in-out;
+}
+
+#root{
+  width: max(1000px, 50vw);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #b4b4b4;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+
+.column{
+  display: flex;
+  flex-direction: column;
+}
+
+.center{
+  justify-content: center;
+  align-items: center;
+}
+
+/*****************************
+********** HEADER      ******
+*****************************/
+
+.header{
+  width: 100%;
+  margin-bottom: auto;
+  height: 10vh;
+  border-bottom: 1px solid grey;
+  font-size: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo{
+  margin-right: auto;
+}
+
+.navBar{
+  display: flex;
+  align-items: center;
+  gap: 2vh;
+}
+
+/*****************************
+********** CONTENT      ******
+*****************************/
+
+.content{
+  width: 100%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/*****************************
+********** HOME      ******
+*****************************/
+.home{
+  height: 80vh;
+  width: 100%;
+}
+.homeText{
+  
+  width: 30%;
+  
+  font-size: 20px;
+  font-weight: 100;
+  text-align: end;
+}
+
+.left{
+  width: 20%;
+  font-weight:500;
+  font-size: 30px;
+  text-align: start;
+  margin-right: auto; 
+}
+.tituloHome{
+  background-image: url('https://static.vecteezy.com/system/resources/previews/006/240/302/non_2x/abstract-soft-focus-sunset-field-landscape-of-yellow-flowers-and-grass-meadow-warm-golden-hour-sunset-sunrise-time-tranquil-spring-summer-nature-closeup-and-blurred-forest-background-idyllic-nature-photo.jpg');
+  font-size: 15rem;
+  color: transparent;
+  background-clip: text;
+  background-size: cover;
+  font-weight: bolder;
+  background-position: center;
+
+  background-attachment: fixed;
+}
+
+/*****************************
+********** ABOUT      ******
+*****************************/
+
+.about{
+  position: relative; 
+  height: 100vh;
+  width: 100%;
+  background-color: transparent;
+}
+
+.aboutTitle{
+  text-align: start;
+  font-size: var(--titulo);
+  padding: 5vh 0vh;
+}
+
+.aboutText {
+  position: absolute;
+  width: 70%;
+  top: 20%;
+  right: 0;
+  text-align: end;
+  font-size: 2.5rem;
+  line-height: 1.8;
+  font-weight: 600;
+  color: #333;
+  margin: 0 auto;
+}
+
+.imagen{
+  margin-right: auto;
+  width: 45%;
+  height: 800px;
+  background-image: url('assets/Pfp.PNG');
+  background-size: cover;
+  background-position: center ;
+}
+
+
+.sabermas {
+  border: 5px solid black;
+  padding: 5vh;
+  font-size: 20px;
+  cursor: pointer;
+  -webkit-mask: 
+    conic-gradient(from 180deg at top 8px right 8px, #0000 90deg,#000 0)
+     var(--_i,100%) 0  /200% var(--_i,8px) border-box no-repeat,
+    conic-gradient(at bottom 8px left  8px,  #0000 90deg,#000 0)
+     0   var(--_i,100%)/var(--_i,8px) 100% border-box no-repeat,
+    linear-gradient(#000000) padding-box ;
+  transition: .3s, -webkit-mask-position .3s .3s;
+}
+.sabermas:hover {
+  --_i: 100%;
+  transition: .3s, -webkit-mask-size .3s .1s;
+}
+
+
+/*****************************
+********** PROYECTOS      ******
+*****************************/
+
+.proyects{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mejoresProyectos{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.mp1, .mp2{
+  height: 80%;
+  border: 2px solid black;
+  width: 40%;
+}
+
+.mp1{
+
+  position: absolute;
+  left: 5%;
+  
+  top: 5%;
+}
+
+.mp2{
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
+}
+
+.proyectosGrid{
+  border: 2px solid rebeccapurple;
+  width: 60%;
+  display: grid;
+  grid-template-columns: repeat(autofit, 1fr);
+}
+
+.proyectbox{
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+}
+
+/*****************************
+********** DARK / LIGHT THEME******
+*****************************/
+.toggle{
+  cursor: pointer;
+}
+
+body.dark-theme{
+  background-color: rgb(36, 36, 36);
+  color: white;
+}
+
+.dark-theme a {
+  color: rgb(255, 255, 255);
+}
