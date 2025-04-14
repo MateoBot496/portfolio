@@ -1,6 +1,18 @@
+@font-face {
+  font-family: 'Gothic';
+  src: url('assets/Special.ttf') format('truetype');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 :root{
   --titulo: 30px;
   --animation-color: rgb(92, 179, 164);
+  --texto:24px;
+  --headertext: 20px;
+  --textoXL: 40px;
 }
 
 *{
@@ -37,7 +49,6 @@ a:hover {
 body {
   
   width: 100%;
-  margin: 0;
   display: flex;
   justify-content: center;
   min-width: 320px;
@@ -107,7 +118,7 @@ button:focus-visible {
   margin-bottom: auto;
   height: 10vh;
   border-bottom: 1px solid grey;
-  font-size: 20px;
+  font-size: var(--headertext);
 
   display: flex;
   align-items: center;
@@ -141,14 +152,14 @@ button:focus-visible {
 ********** HOME      ******
 *****************************/
 .home{
-  height: 80vh;
+  height: 99vh;
   width: 100%;
 }
 .homeText{
   
   width: 30%;
   
-  font-size: 20px;
+  font-size: var(--headertext);
   font-weight: 100;
   text-align: end;
 }
@@ -156,7 +167,7 @@ button:focus-visible {
 .left{
   width: 20%;
   font-weight:500;
-  font-size: 30px;
+  font-size: var(--titulo);
   text-align: start;
   margin-right: auto; 
 }
@@ -187,35 +198,74 @@ button:focus-visible {
   text-align: start;
   font-size: var(--titulo);
   padding: 5vh 0vh;
+
+  scale: .99; opacity: 0; transform: translateY(-50px);
+  transition: all .5s ease-out 1s;
 }
 
+.aboutTitle.show{
+  transform: translateY(0px);
+  scale: 1;
+  opacity: 1;
+}
+
+
+
 .aboutText {
+  scale: .99; opacity: 0; transform: translateY(-50px);
+  transition: all .5s ease-out;
+
   position: absolute;
   width: 70%;
-  top: 20%;
+  top: 10%;
   right: 0;
   text-align: end;
-  font-size: 2.5rem;
+  font-size: var(--textoXL);
   line-height: 1.8;
   font-weight: 600;
-  color: #333;
   margin: 0 auto;
 }
 
-.imagen{
+.aboutText.show{
+  transform: translateY(0px);
+  scale: 1;
+  opacity: 1;
+}
+
+
+.imagen {
+  transform: translateY(-100px);
+  clip-path: inset(0 0 100% 0);
+  transition:
+    clip-path 2s cubic-bezier(0.5, 0, 0.3, 1),
+    transform 2s cubic-bezier(0.7, 0, 0.3, 1),
+    background-size 3s cubic-bezier(0.7, 0, 0.3, 1);
+
   margin-right: auto;
   width: 45%;
   height: 800px;
   background-image: url('assets/Pfp.PNG');
-  background-size: cover;
-  background-position: center ;
+  background-size: 140%;
+  background-position: center;
+  background-repeat: no-repeat;
+    
 }
+
+.imagen.show {
+  transform: translateY(0);
+  clip-path: inset(0 0 0 0);
+  
+  background-size: 120%;
+}
+
+
+
 
 
 .sabermas {
   border: 5px solid black;
   padding: 5vh;
-  font-size: 20px;
+  font-size: var(--headertext);
   cursor: pointer;
   -webkit-mask: 
     conic-gradient(from 180deg at top 8px right 8px, #0000 90deg,#000 0)
@@ -228,6 +278,16 @@ button:focus-visible {
 .sabermas:hover {
   --_i: 100%;
   transition: .3s, -webkit-mask-size .3s .1s;
+}
+
+#carretera{
+  position: absolute;
+  width: 100%;
+}
+.carretera {
+  stroke-dasharray: 1000; /* este valor se sobreescribirá con JS */
+  stroke-dashoffset: 1000;
+  animation: dibujarLinea 4s ease-out forwards;
 }
 
 
@@ -244,59 +304,413 @@ button:focus-visible {
 
 .mejoresProyectos{
   position: relative;
-  width: 100vw;
+  width: 99vw;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 
+
+
 }
 
 .mp1, .mp2{
   height: 80%;
-  border: 2px solid black;
   width: 40%;
+  cursor: pointer;
+
+  transform: translateY(-100px);
+  clip-path: inset(0 0 100% 0);
+  scale: 1;
+  transition:
+    clip-path 1.5s cubic-bezier(0.5, 0, 0.3, 1),
+    transform 1.5s cubic-bezier(0.7, 0, 0.3, 1),
+    background-size 1.5s cubic-bezier(0.7, 0, 0.3, 1),
+    scale .5s ease-in-out
+    ;
+    
+
+
 }
+
+.mp1::before, .mp2::before{
+  background-color: rgba(0, 0, 0);
+  opacity: .55;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.mp1:hover::before, .mp2:hover::before{
+  opacity: 0;
+}
+
+.mp1.show, .mp2.show{
+  transform: translateY(0px);
+  clip-path: inset(0 0 0 0);
+  background-size: 105%;
+
+
+}
+
+.mp1:hover, .mp2:hover{
+  background-color: black;
+  scale: 1.05;
+}
+
+.mp1 p, .mp2 p{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--textoXL);
+
+  position: absolute;
+  opacity: 1;
+  
+  transition: all 0.2s ease-in-out;
+}
+
+.mp1:hover p, .mp2:hover p {
+  opacity: 0;  /* El texto desaparecerá al hacer hover */
+}
+
 
 .mp1{
 
   position: absolute;
-  left: 5%;
-  
-  top: 5%;
+  left:7%;
+  background-image: url('assets/proyecto1.PNG');
+  background-repeat: no-repeat;
+  background-size: 115%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    top: 5%;
 }
 
 .mp2{
   position: absolute;
-  right: 5%;
+  right: 7%;
+  background-image: url('assets/proyecto2.PNG');
+  background-repeat: no-repeat;
+  background-size: 115%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
   bottom: 5%;
 }
 
-.proyectosGrid{
-  border: 2px solid rebeccapurple;
-  width: 60%;
+.proyectosGrid {
+  width: 85%;
   display: grid;
-  grid-template-columns: repeat(autofit, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
 }
 
-.proyectbox{
+.proyectbox {
+  position: relative;
   width: 500px;
   height: 500px;
-  border: 2px solid black;
+  margin: 0 auto; /* opcional si quieres centrar contenido dentro */
+  border-radius: 10px;
+
+  display: flex;
+  justify-content: center; /* centra horizontalmente */
+  align-items: center;   
+  
+  transition: all 0.3s ease-in-out;
+}
+
+.otros{
+  padding: 2vh;
+  font-family: Gothic;
+  font-size: var(--titulo);
+
+}
+
+
+.proyectbox::before{
+  
+  background-color: rgba(0, 0, 0);
+  opacity: .6;
+  content: '';
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  transition: all 0.3s ease-in-out; 
+}
+
+.proyectbox:hover::before{
+  opacity: 0;
+}
+
+.proyectbox p{
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--titulo);
+
+  position: absolute;
+  
+  transition: all 0.2s ease-in-out;
+}
+
+.proyectbox:hover p {
+  opacity: 0;  /* El texto desaparecerá al hacer hover */
+}
+
+.proyectbox:hover {
+  transform: scale(1.05); /* Efecto de zoom al hacer hover */
+}
+
+
+.p1, .p2 , .p3 , .p4{
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+
+  opacity: 0;
+  transform: translateY(50px);
+
+  
+}
+
+.p1.show{
+  opacity: 1;
+  transform: translateY(0px);
+
+}
+
+.p2.show{
+  opacity: 1;
+  transform: translateY(0px);
+  
+}
+.p3.show{
+  
+  opacity: 1;
+  transform: translateY(0px);
+}
+.p4.show{
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+
+.p1{
+ background-image: url('assets/p1.PNG');
+ transition: opacity 0.3s ease-in-out,
+ transform 0.3s ease-in-out;
+}
+.p2{
+  
+  background-image: url('assets/su.PNG');
+  transition: opacity 0.3s ease-in-out 0.3s,
+  transform 0.3s ease-in-out 0.3s;
+}
+.p3{
+  
+  background-image: url('assets/calc.png');
+  transition: opacity 0.3s ease-in-out 0.6s,
+  transform 0.3s ease-in-out 0.6s;
+}
+.p4{
+  
+  background-image: url('assets/p2.PNG');
+  transition: opacity 0.3s ease-in-out 0.9s,
+  transform 0.3s ease-in-out 0.9s;
+}
+
+/*****************************
+********** CONTACT  ******
+*****************************/
+.contact{
+  display: flex;
+  margin-top: 200px;
+  height: 80vh;
+}
+
+.tituloContact{
+  background-image: url('https://www.shutterstock.com/image-vector/seamless-abstract-geometric-colorful-pattern-260nw-429818149.jpg');
+  font-size: 15rem;
+  color: transparent;
+  background-clip: text;
+  background-size: contain;
+  font-weight: bolder;
+  background-position: center;
+
+}
+
+.contactTexto{
+  font-size: 24px;
+}
+.form{
+  width: 900px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form h2{
+  text-align: start;
+}
+
+hr{
+  color: goldenrod;
+  width: 30%;
+  margin-bottom: 1vh;
+}
+.formname{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+  background-color: #fff;
+}
+
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+button {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3b7bd6;
 }
 
 /*****************************
 ********** DARK / LIGHT THEME******
 *****************************/
+.border{
+  border: 2px solid black;
+}
+.center{
+  justify-content: center;
+  align-items: center;
+}
 .toggle{
   cursor: pointer;
 }
 
+
 body.dark-theme{
-  background-color: rgb(36, 36, 36);
+  background-color: rgb(62, 65, 62);
   color: white;
 }
 
 .dark-theme a {
   color: rgb(255, 255, 255);
+}
+
+
+
+/*****************************
+********** QUERIES ******
+*****************************/
+
+
+@media (max-width: 1920px) {
+  .aboutText{
+    top: 20%;
+    font-size: 32px;
+  }
+  .proyectosGrid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 0.85rem;
+  
+  }
+  .proyectosGrid {
+    width: 95%;
+    display: grid;
+  
+  }
+
+  .proyectbox {
+    width: 400px;
+    height: 400px;
+  }
+
+  
+  .mejoresProyectos{
+    width: 90vw;
+
+    
+
+    }
+  .mp1, .mp2{
+    height: 70%;  
+  }
+}
+
+@media (max-width: 1700px) {
+  .mp1, .mp2{
+    height: 60%;  
+  }
+}
+
+@media (max-width: 1450px) {
+  
+
+  .mejoresProyectos{
+    flex-direction: column;
+    height: auto; 
+  
+  }
+  
+  .mp1, .mp2{
+    position: relative; /* ya no necesitan absolute */
+    width: 90%;
+    height: 300px; /* o el alto que necesites para móviles */
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+    background-size: cover;
+  }
+
+  .mp1 p, .mp2 p {
+    position: relative; /* ya no absolute */
+    opacity: 1;
+  }
 }

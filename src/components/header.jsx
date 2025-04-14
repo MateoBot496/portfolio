@@ -10,11 +10,10 @@ export default function Header(){
             </div>
             
             <div className="navBar">    
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Proyects</a>
-                <a href="#">FAQs</a>
-                <a href="#">Contact</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#proyects">Proyects</a>
+                <a href="#contact">Contact</a>
                 <Toogle />
             </div>
             
