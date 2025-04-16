@@ -39,7 +39,7 @@ export default function MyComponent() {
 
                     <div className="background"></div>
                     <div className="aboutTitle otros" ref={titleRef}>Sobre mi</div>
-                    <div className="row center">
+                    <div className="aboutdiv row center">
                             <div ref={imageRef} className="imagen">
                             </div>  
                             <p ref={textRef} className="aboutText">

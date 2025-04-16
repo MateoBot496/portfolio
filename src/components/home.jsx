@@ -9,7 +9,7 @@ export default function Home(){
                 <div className="homeText">Bienvenido a mi portafolio.</div>
             </div>
 
-            <div className="tituloHome">CREATIVO</div>
+            <div className="tituloHome" >CREATIVO</div>
         </div>
         </>
     )

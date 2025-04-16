@@ -172,13 +172,15 @@ button:focus-visible {
   margin-right: auto; 
 }
 .tituloHome{
-  background-image: url('https://static.vecteezy.com/system/resources/previews/006/240/302/non_2x/abstract-soft-focus-sunset-field-landscape-of-yellow-flowers-and-grass-meadow-warm-golden-hour-sunset-sunrise-time-tranquil-spring-summer-nature-closeup-and-blurred-forest-background-idyllic-nature-photo.jpg');
+  background-image: url('assets/parallax.jpg');
+  
   font-size: 15rem;
   color: transparent;
   background-clip: text;
-  background-size: cover;
+  background-size: 60%;
   font-weight: bolder;
   background-position: center;
+  background-repeat: no-repeat;
 
   background-attachment: fixed;
 }
@@ -328,7 +330,8 @@ button:focus-visible {
     background-size 1.5s cubic-bezier(0.7, 0, 0.3, 1),
     scale .5s ease-in-out
     ;
-    
+  border-radius: 20px;
+
 
 
 }
@@ -340,6 +343,8 @@ button:focus-visible {
   display: block;
   height: 100%;
   width: 100%;
+  
+  border-radius: 20px;
 
   transition: all 0.3s ease-in-out;
 }
@@ -534,6 +539,9 @@ button:focus-visible {
 /*****************************
 ********** CONTACT  ******
 *****************************/
+.tituloHome{
+  background-size: 60%;
+}
 .contact{
   display: flex;
   margin-top: 200px;
@@ -651,8 +659,10 @@ body.dark-theme{
 ********** QUERIES ******
 *****************************/
 
-
 @media (max-width: 1920px) {
+  .tituloHome{
+    background-size: 80%;
+  }
   .aboutText{
     top: 20%;
     font-size: 32px;
@@ -686,31 +696,164 @@ body.dark-theme{
 }
 
 @media (max-width: 1700px) {
+  .tituloHome{
+    background-size: 85%;
+  }
   .mp1, .mp2{
     height: 60%;  
   }
 }
 
 @media (max-width: 1450px) {
+  .tituloHome{
+    background-size: cover;
+    font-size: 12rem;
+  }
   
 
   .mejoresProyectos{
     flex-direction: column;
     height: auto; 
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
   
   }
   
   .mp1, .mp2{
     position: relative; /* ya no necesitan absolute */
-    width: 90%;
-    height: 300px; /* o el alto que necesites para móviles */
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 900px;
+    height: 900px; /* o el alto que necesites para móviles */
     transform: translateY(0);
     clip-path: inset(0 0 0 0);
     background-size: cover;
+  }
+
+  .mp1::before, .mp2::before{
+    display: none;
+  }
+
+  .mp1 p, .mp2 p{
+    display: none;
   }
 
   .mp1 p, .mp2 p {
     position: relative; /* ya no absolute */
     opacity: 1;
   }
+}
+
+@media (max-width: 1000px) {
+  #root{
+    width: 100%;
+  }
+
+  .left{
+    width: 30%;
+  }
+
+  .mp1, .mp2{
+    width: 600px;
+    height: 700px;
+  }
+  .tituloHome{
+    font-size: 9rem;
+  }
+
+  .about{
+    height: auto;
+    
+  }
+
+  .imagen{
+    margin: 0 auto;
+  }
+  .aboutdiv{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutText{
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+  }
+
+  .form{
+    width: 600px;
+  }
+}
+
+@media (max-width: 730px) {
+  .mejoresProyectos{
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+  }
+  .mejoresProyectos a{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+
+  }
+
+  .mp1, .mp2{
+    width: 100%;
+    height: 70vh;
+  }
+  .tituloHome{
+    font-size: calc(5px + 8vh );
+  }
+  .tituloContact{
+    font-size: 10rem;
+  }
+  .formname{
+    flex-direction: column;
+    gap: 1vh;
+  }
+  .homeText{
+  
+    width: 200px;
+    
+    
+  }
+  
+  .left{
+    width: 200px;
+    text-align: start;
+    margin-left: 1vh;
+  }
+
+  .imagen{
+    margin: 0 auto;
+    width: 70%;
+    height: 60vh ;
+  }
+
+  .aboutText{
+    font-size: large;
+  }
+  .mp1, .mp2{
+    scale: .8;
+  }
+  .about{
+    height: auto;
+  }
+
+  .aboutText{
+    text-align: center;
+  }
+  .form{
+    width: 90%;
+  }
+
 }
