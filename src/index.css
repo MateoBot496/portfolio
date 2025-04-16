@@ -611,7 +611,6 @@ label {
   font-weight: 600;
   display: block;
   margin-bottom: 0.5rem;
-  color: #333;
 }
 
 button {
@@ -742,7 +741,7 @@ body.dark-theme{
   }
 
   .mp1 p, .mp2 p {
-    position: relative; /* ya no absolute */
+    position: relative; 
     opacity: 1;
   }
 }
@@ -751,6 +750,10 @@ body.dark-theme{
   #root{
     width: 100%;
   }
+  .homeTextDiv{
+    width: 90% !important;
+  }
+
 
   .left{
     width: 30%;
@@ -856,4 +859,19 @@ body.dark-theme{
     width: 90%;
   }
 
+}
+
+@media (max-width: 425px) {
+  .homeText{
+    display: none;
+  }
+  .left{
+    display: block;
+  }
+  .logo{
+    display: none;
+  }
+  .navBar{
+
+  }
 }
