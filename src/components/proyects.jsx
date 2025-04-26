@@ -46,9 +46,9 @@ export default function Proyects(){
             
             <h2 className="otros">Otros proyectos</h2>
             <div className="proyectosGrid" >
-                <a href="https://mateobot496.github.io/weather-app/">
-                    <div className="proyectbox p1 " ref={(el) => proyects.current[0] = el}>
-                    <p>WEATHER APP</p>
+                <a href="https://mateoshopcart.netlify.app/">
+                    <div className="proyectbox p5 " ref={(el) => proyects.current[0] = el}>
+                    <p>SHOPPING CART</p>
                     </div>
                 </a>
                 <a href="https://mateobot496.github.io/singup_form/">
@@ -65,6 +65,11 @@ export default function Proyects(){
                 <a href="https://mateobot496.github.io/restaurant/">
                     <div className="proyectbox p4" ref={(el) => proyects.current[3] = el}>
                     <p>RESTAURANT</p>
+                    </div>
+                </a>
+                <a href="https://mateobot496.github.io/weather-app/">
+                    <div className="proyectbox p1 " ref={(el) => proyects.current[4] = el}>
+                    <p>WEATHER APP</p>
                     </div>
                 </a>
             </div>

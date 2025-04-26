@@ -479,7 +479,7 @@ button:focus-visible {
 }
 
 
-.p1, .p2 , .p3 , .p4{
+.p1, .p2 , .p3 , .p4, .p5{
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -510,12 +510,17 @@ button:focus-visible {
   opacity: 1;
   transform: translateY(0px);
 }
+.p5.show{
+  opacity: 1;
+  transform: translateY(0px);
+}
+
 
 
 .p1{
  background-image: url('assets/p1.PNG');
- transition: opacity 0.3s ease-in-out,
- transform 0.3s ease-in-out;
+ transition: opacity 0.3s ease-in-out 1.2s,
+ transform 0.3s ease-in-out 1.2s;
 }
 .p2{
   
@@ -534,6 +539,14 @@ button:focus-visible {
   background-image: url('assets/p2.PNG');
   transition: opacity 0.3s ease-in-out 0.9s,
   transform 0.3s ease-in-out 0.9s;
+}
+
+.p5{
+  background-image: url('assets/shop.PNG');
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.3s ease-in-out,
+  transform 0.3s ease-in-out;
 }
 
 /*****************************
