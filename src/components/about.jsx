@@ -16,15 +16,18 @@ export default function MyComponent() {
         },{
             rootMargin: '0px 0px -200px 0px' // 50% del elemento debe estar visible
           });
+        const node1 = imageRef.current
+        const node2 = textRef.current
+        const node3 = titleRef.current
 
-        if (imageRef.current) observer.observe(imageRef.current);
-        if (textRef.current) observer.observe(textRef.current);
-        if (titleRef.current) observer.observe(titleRef.current);
+        if (node1) observer.observe(node1);
+        if (node2) observer.observe(node2);
+        if (node3) observer.observe(node3);
 
         return () => {
-            if (imageRef.current) observer.unobserve(imageRef.current);
-            if (textRef.current) observer.unobserve(textRef.current);
-            if (titleRef.current) observer.observe(titleRef.current);
+            if (node1) observer.unobserve(node1);
+            if (node2) observer.unobserve(node2);
+            if (node3) observer.unobserve(node3);
         };
 
     }, [])   

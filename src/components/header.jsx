@@ -6,7 +6,7 @@ export default function Header(){
         <div className='header'>
             <div className="logo">
                 
-                <a href="#">Logo</a>
+                <a href="#">Logo-Ipsum</a>
             </div>
             
             <div className="navBar">    

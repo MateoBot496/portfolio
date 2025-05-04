@@ -1,3 +1,4 @@
+@import "tailwindcss";
 @font-face {
   font-family: 'Gothic';
   src: url('assets/Special.ttf') format('truetype');
@@ -875,16 +876,20 @@ body.dark-theme{
 }
 
 @media (max-width: 425px) {
+  .header{
+    font-size: 11px;
+  }
   .homeText{
     display: none;
+
+  }
+  .tituloHome{
+    font-size: 50px;
   }
   .left{
     display: block;
   }
   .logo{
     display: none;
-  }
-  .navBar{
-
   }
 }

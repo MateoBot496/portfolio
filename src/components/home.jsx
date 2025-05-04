@@ -1,4 +1,12 @@
+import Spline from '@splinetool/react-spline';
+import { useEffect, useState } from "react"
+import { motion } from "motion/react"
+
 export default function Home(){
+    const [visible, setVisible] = useState(false)
+    useEffect(() => {
+        setVisible(true)
+    },[])
     return(
         <>
         <div className="home column center " id="home">
@@ -8,8 +16,14 @@ export default function Home(){
                 
                 <div className="homeText">Bienvenido a mi portafolio.</div>
             </div>
+            <motion.div transition={{ duration: 2 }}
+            initial={{ opacity: 0}}
+            whileInView={{ opacity: 1}}
+            >  
+            <div className={`tituloHome transition-all duration-1000 ${visible? 'opacity-100' : 'opacity-0'}`}>CREATIVO</div>
+            </motion.div>
 
-            <div className="tituloHome" >CREATIVO</div>
+            
         </div>
         </>
     )
