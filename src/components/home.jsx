@@ -1,5 +1,6 @@
-
+import Spline from '@splinetool/react-spline';
 import { useEffect, useState } from "react"
+import { motion } from "motion/react"
 
 export default function Home(){
     const [visible, setVisible] = useState(false)
