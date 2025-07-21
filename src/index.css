@@ -357,7 +357,6 @@ button:focus-visible {
 .mp1.show, .mp2.show{
   transform: translateY(0px);
   clip-path: inset(0 0 0 0);
-  background-size: 105%;
 
 
 }
@@ -388,22 +387,22 @@ button:focus-visible {
 
   position: absolute;
   left:7%;
-  background-image: url('assets/proyecto1.PNG');
+  background-image: url('assets/Whochats-proyecto.PNG');
   background-repeat: no-repeat;
-  background-size: 115%;
+  background-size: cover;
 
   display: flex;
   align-items: center;
   justify-content: center;
-    top: 5%;
+  top: 5%;
 }
 
 .mp2{
   position: absolute;
   right: 7%;
-  background-image: url('assets/proyecto2.PNG');
+  background-image: url('assets/proyecto1.PNG');
   background-repeat: no-repeat;
-  background-size: 115%;
+  background-size: 105%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -499,7 +498,7 @@ button:focus-visible {
 
 
 .p0{
- background-image: url('assets/Whochats-proyecto.PNG');
+ background-image: url('assets/proyecto2.PNG');
  transition: opacity 0.3s ease-in-out,
  transform 0.3s ease-in-out;
 }
@@ -729,7 +728,6 @@ body.dark-theme{
     height: 900px; /* o el alto que necesites para móviles */
     transform: translateY(0);
     clip-path: inset(0 0 0 0);
-    background-size: cover;
   }
 
   .mp1::before, .mp2::before{

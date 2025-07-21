@@ -30,17 +30,17 @@ export default function Proyects(){
         <section className="proyects" id="proyects">
             <h2 className="otros">Ultimos proyectos</h2>
             <div className="mejoresProyectos">
-                <a href="https://cvappmb496.netlify.app/">
+                <a href="https://whochatss.netlify.app/">
                         
-                    <div className="mp1" ref={(el) => mps.current[1] = el} > 
-                        <p>CV Creator</p>
+                    <div className="mp1" ref={(el) => mps.current[0] = el} > 
+                        <p>WHOCHATS</p>
                     </div>
                 </a>
 
                 <a href="https://memorygame496.netlify.app/">
-                    
-                    <div className="mp2" ref={(el) => mps.current[0] = el} >
-                        <p>Memory game</p>
+                        
+                    <div className="mp2" ref={(el) => mps.current[1] = el} > 
+                        <p>MEMORY GAME</p>
                     </div>
                 </a>
                 
@@ -50,7 +50,7 @@ export default function Proyects(){
             <div className="proyectosGrid" >
                 <a href="https://cvappmb496.netlify.app/">
                         
-                    <div className="proyectbox p0" ref={(el) => mps.current[0] = el} > 
+                    <div className="proyectbox p0" ref={(el) => proyects.current[0] = el} > 
                         <p>CV Creator</p>
                     </div>
                 </a>
